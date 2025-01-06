@@ -122,8 +122,7 @@ export default {
       }
       // task not exist
       else{
-        // form class
-        const addTaskForm = document.querySelector(".add");
+
         //  datetime
 
         const current = new Date();
@@ -144,7 +143,8 @@ export default {
         await addDoc(colRef, this.task).then(() => {
           this.showAlert("Task Added Successfully", "alert-success");
           // reset form
-          addTaskForm.reset();
+          this.task.title = ""
+          this.task.description = ""
         });
       
       
